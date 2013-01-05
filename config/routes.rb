@@ -1,7 +1,12 @@
 RedTable::Application.routes.draw do
 
-  resource :imageboard, :only => [:show]
+  resource :imageboard do #, defaults: { format: 'html' }, :format => /(xml|json|html)/ do
+    get 'about'
+    get 'news'
+    get 'faq'
+    get 'rules'
+  end
 
-  root :to => 'imageboards#show'
+  root to: 'imageboards#show'
 
 end

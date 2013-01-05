@@ -1,12 +1,9 @@
-= form_for @imageboard do |f|
-  - if @imageboard.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@imageboard.errors.count, "error")} prohibited this imageboard from being saved:"
-      ul
-        - @imageboard.errors.full_messages.each do |message|
-          li = message
+= simple_form_for(@imageboard) do |f|
+  = f.error_notification
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions = f.submit 'Save'
+  .form-inputs
+    = f.input :name
+    = f.input :logo, :as => :file
+
+  .form-actions
+    = f.button :submit, t("form.submit")

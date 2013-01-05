@@ -2,25 +2,26 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+# database
 gem 'mongoid', '~> 3.0.16'
 
-gem 'slim-rails', '1.1.0'
+# images
+gem 'carrierwave', '~> 0.7.0'
+gem 'carrierwave-mongoid', '~> 0.1.0', :require => 'carrierwave/mongoid'
+gem 'mini_magick'
+
+# front-end
+gem 'slim-rails', '~> 1.1.0'
 gem 'jquery-rails', '2.1.4'
 gem 'rails_config', '0.3.1'
-
-#gem 'less-rails-bootstrap'
+gem 'simple_form', '2.0.4'
+gem 'responders', '0.9.3'
 
 group :development do
   gem 'pry', '0.9.10'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
-  # gem 'sass-rails',   '~> 3.2.3'
   gem 'therubyracer', :platforms => :ruby
   gem 'less-rails', '2.2.3'
   gem 'twitter-bootstrap-rails', '2.1.6'
@@ -33,17 +34,8 @@ group :test do
   gem 'capybara', '2.0.1'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# server
+gem 'unicorn', '~> 4.4.0'
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-gem 'unicorn', '4.4.0'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+# deploy
+gem 'capistrano'
