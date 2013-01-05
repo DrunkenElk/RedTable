@@ -25,7 +25,7 @@ html lang="en"
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.brand href="#"RedTable
+          a.brand.imageboard-name href="#"#{@imageboard.name}
           .container-fluid.nav-collapse
             ul.nav
               li= link_to "Link 1", "/path1"
@@ -35,7 +35,7 @@ html lang="en"
     .container-fluid
 
       .row-fluid
-        .span3
+        /.span3
           .well.sidebar-nav
             ul.nav.nav-list
               li.nav-header Sidebar
@@ -46,7 +46,7 @@ html lang="en"
           = yield
     
       footer
-        p &copy; Company 2012
+        p &copy; #{mail_to Settings.layout.email, Settings.layout.name} 2012
     /!
       Javascripts
       \==================================================
