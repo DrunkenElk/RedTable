@@ -1,0 +1,19 @@
+h1 Listing imageboards
+
+table
+  tr
+    th Name
+    th
+    th
+    th
+
+  - @imageboards.each do |imageboard|
+    tr
+      td = imageboard.name
+      td = link_to 'Show', imageboard
+      td = link_to 'Edit', edit_imageboard_path(imageboard)
+      td = link_to 'Destroy', imageboard, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Imageboard', new_imageboard_path

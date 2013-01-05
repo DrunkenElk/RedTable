@@ -106,6 +106,8 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
+    rails_config (0.3.1)
+      activesupport (>= 3.0)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -181,11 +183,12 @@ PLATFORMS
 DEPENDENCIES
   capybara (= 2.0.1)
   coffee-rails (~> 3.2.1)
-  jquery-rails
+  jquery-rails (= 2.1.4)
   less-rails (= 2.2.3)
   mongoid (~> 3.0.16)
-  pry
+  pry (= 0.9.10)
   rails (= 3.2.8)
+  rails_config (= 0.3.1)
   rspec-rails (= 2.11.4)
   slim-rails (= 1.1.0)
   therubyracer

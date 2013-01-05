@@ -8,13 +8,14 @@ gem 'rails', '3.2.8'
 gem 'mongoid', '~> 3.0.16'
 
 gem 'slim-rails', '1.1.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.4'
+gem 'rails_config', '0.3.1'
 
 gem 'twitter-bootstrap-rails', '2.1.6'
 #gem 'less-rails-bootstrap'
 
 group :development do
-  gem 'pry'
+  gem 'pry', '0.9.10'
 end
 
 group :test do
