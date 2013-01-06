@@ -45,7 +45,13 @@ ru:
 
   imageboard:
     edit:
-      caption: "Редактирование"
+      caption: "Редактирование имиджборды"
+
+  admin:
+    index:
+      caption: "Панель администратора"
+      imageboard: "Настройки имиджборы"
+      users: "Пользователи"
 
   form:
     submit: "Сохранить"

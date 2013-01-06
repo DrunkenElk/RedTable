@@ -1,7 +1,9 @@
 RedTable::Application.routes.draw do
 
-  resources :users
+  get '/admin' => 'admin#index'
+
   devise_for :users
+  resources :users
 
   resource :imageboard, defaults: { format: 'html' } do
     get 'about'
