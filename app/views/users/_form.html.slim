@@ -1,0 +1,14 @@
+= simple_form_for(@user, html: { class: 'form-horizontal well' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :email
+    = f.input :password, :as => :password
+    = f.input :password_confirmation, :as => :password
+    .control-group
+      = label_tag 'user_role', User.human_attribute_name(:role), :class => 'control-label'
+      .controls
+        = f.select :role, User::ROLES
+
+  .form-actions
+    = f.button :submit, t('form.submit')

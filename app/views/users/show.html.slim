@@ -1,0 +1,13 @@
+h2= User.model_name.human
+
+.well
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :email}:"
+    .offset2 = @user.email
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :role}:"
+    .offset2 = @user.role
+
+= link_to t('form.edit'), edit_user_path(@user)
+'|
+= link_to t('form.back'), users_path

@@ -1,13 +1,13 @@
 class User
   include Mongoid::Document
 
-  ROLES = %w[admin moderator anonymous banned]
+  ROLES = %w[admin moderator anonymous]
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, # :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :rememberable, :trackable, :validatable
+  # :recoverable, :registerable
 
   ## Database authenticatable
   field :email,              :type => String, :default => ""
@@ -45,5 +45,5 @@ class User
   ## Token authenticatable
   # field :authentication_token, :type => String
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :role, :password_confirmation, :remember_me
 end

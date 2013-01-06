@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 protected
 
   def imageboard
+    Imageboard.instance
   end
 
 private

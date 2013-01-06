@@ -8,11 +8,11 @@ class Ability
       when 'admin'
         can :manage, :all
       when 'moderator'
-        can :read, :all
+        can :read, Imageboard
       when 'anonymous'
-        can :read, :all
+        can :read, Imageboard
       when 'banned'
-        can :read, :all
+        can :read, Imageboard
     end
 
   end

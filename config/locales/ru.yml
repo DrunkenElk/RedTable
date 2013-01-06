@@ -4,6 +4,9 @@
 ru:
   devise:
     sign_out: "Выйти"
+    sign_in:
+      caption: "Вход"
+      submit: "Войти"
 
   unauthorized:
     manage:
@@ -12,7 +15,14 @@ ru:
   mongoid:
     models:
       imageboard: "Имиджборд"
+      user: "Пользователь"
     attributes:
+      user:
+        role: "Роль"
+        email: "Почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
       imageboard:
         name: "Название"
         logo: "Логотип"
@@ -24,8 +34,27 @@ ru:
     faq: "FAQ"
     rules: "Правила"
 
-  edit:
-    caption: "Редактирование"
+  users:
+    index:
+      caption: "Список пользователей"
+      new: "Новый пользоватeль"
+    edit:
+      caption: "Редактирование пользователя"
+    new:
+      caption: "Новый пользователь"
+
+  imageboard:
+    edit:
+      caption: "Редактирование"
 
   form:
     submit: "Сохранить"
+    back: "Назад"
+    show: "Показать"
+    edit: "Редактировать"
+
+  index:
+    destroy: "Удалить"
+    edit: "Редактировать"
+    show: "Показать"
+    confirm: "Вы уверены?"

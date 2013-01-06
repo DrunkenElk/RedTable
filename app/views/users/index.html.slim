@@ -1,0 +1,21 @@
+h3 = t('users.index.caption')
+
+table.table.table-striped
+  tr
+    th = User.human_attribute_name(:role)
+    th = User.human_attribute_name(:email)
+    th
+    th
+    th
+
+  - @users.each do |user|
+    tr
+      td = user.role
+      td = user.email
+      td = link_to t('index.show'), user
+      td = link_to t('index.edit'), edit_user_path(user)
+      td = link_to t('index.destroy'), user, :confirm => t('index.confirm'), :method => :delete
+
+br
+
+= link_to t('users.index.new'), new_user_path
