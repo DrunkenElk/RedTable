@@ -4,6 +4,7 @@ gem 'rails', '3.2.8'
 
 # database
 gem 'mongoid', '~> 3.0.16'
+gem 'bson_ext', '~> 1.8.1'
 
 # authentication & authorization
 gem 'devise', '~> 2.1.2'

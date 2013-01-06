@@ -1,5 +1,4 @@
 div align="center" 
-  p#notice = notice
-  = image_tag(@imageboard.logo, class: "logo_image")
+  = image_tag(imageboard.logo, class: "logo_image")
   div.well 
-    == render(partial: "trivia", locals: { trivia: @imageboard.trivia })
+    == render(partial: "trivia", locals: { trivia: imageboard.trivia })

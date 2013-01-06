@@ -8,4 +8,8 @@ class Imageboard
   attr_accessible :logo, :name, :trivia
 
   mount_uploader :logo, ::LogoUploader
+
+  def self.instance
+    @imageboard ||= Imageboard.first || Imageboard.create
+  end
 end

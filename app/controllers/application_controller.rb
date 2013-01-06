@@ -1,17 +1,19 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
-  before_filter :check_format
   self.responder = ApplicationResponder
 
+  before_filter :check_format
   respond_to :html
-
   protect_from_forgery
 
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, :alert => exception.message
+  end
+
 protected
-  
+
   def imageboard
-    @imageboard ||= Imageboard.find_or_create_by(name: Settings.imageboard.name)
   end
 
 private
