@@ -9,6 +9,7 @@ ru:
       imageboard:
         name: "Название"
         logo: "Логотип"
+        trivia: "Описание"
 
   application:
     about: "О проекте"

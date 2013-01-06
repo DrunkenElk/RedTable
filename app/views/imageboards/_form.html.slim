@@ -1,9 +1,10 @@
-= simple_form_for(@imageboard) do |f|
+= simple_form_for(@imageboard, html: { multipart: true, class: 'form-horizontal well'}) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
-    = f.input :logo, :as => :file
+    = f.input :trivia, as: :text, input_html: { class: "span6", rows: 10 }
+    = f.input :logo, as: :file
 
   .form-actions
     = f.button :submit, t("form.submit")

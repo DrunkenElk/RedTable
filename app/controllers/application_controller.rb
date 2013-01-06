@@ -17,7 +17,8 @@ protected
 private
 
   def check_format
-    request.format = :html if params[:format][/(html|json|xml)/].blank?
+    request.format = :html if params[:format].blank? || 
+      params[:format][/(html|json|xml)/].blank?
   end
 
 end
