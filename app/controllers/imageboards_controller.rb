@@ -10,7 +10,6 @@ class ImageboardsController < ApplicationController
 
   def update
     imageboard.update_attributes(params[:imageboard])
-    binding.pry
     respond_with imageboard
   end
 
