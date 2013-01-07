@@ -27,6 +27,9 @@ ru:
         name: "Название"
         logo: "Логотип"
         trivia: "Описание"
+        faq: "FAQ"
+        rules: "Правила"
+        about: "О проекте"
 
   application:
     about: "О проекте"

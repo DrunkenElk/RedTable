@@ -3,6 +3,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    alias_action :faq, :about, :rules, :news, :to => :read
+
     user ||= User.new # guest user
 
     case user.role

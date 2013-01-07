@@ -1,6 +1,8 @@
-h2 = t('admin.index.caption')
-
-- if can? :manage, Imageboard
-  p = link_to t('admin.index.imageboard'), edit_imageboard_path
-- if can? :manage, User
-  p = link_to t('admin.index.users'), users_path
+.well
+  h2 = t('admin.index.caption')
+  
+  ul
+    - if can? :manage, Imageboard
+      li = link_to t('admin.index.imageboard'), edit_imageboard_path
+    - if can? :manage, User
+      li = link_to t('admin.index.users'), users_path

@@ -16,15 +16,19 @@ class ImageboardsController < ApplicationController
   end
 
   def faq
+    respond_with imageboard
   end
 
   def rules
+    respond_with imageboard
   end
 
   def about
+    respond_with imageboard
   end
 
   def news
+    respond_with imageboard
   end
 
 end

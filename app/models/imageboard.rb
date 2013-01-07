@@ -2,11 +2,14 @@
 class Imageboard
   include Mongoid::Document
 
-  field :name, type: String
+  field :name,   type: String
+  field :logo,   type: String
   field :trivia, type: String
-  field :logo, type: String
+  field :faq,    type: String
+  field :rules,  type: String
+  field :about,  type: String
   
-  attr_accessible :logo, :name, :trivia
+  attr_accessible :logo, :name, :trivia, :faq, :rules, :about
 
   mount_uploader :logo, ::LogoUploader
 

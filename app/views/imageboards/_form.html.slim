@@ -3,8 +3,11 @@
 
   .form-inputs
     = f.input :name
+    = f.input :logo,   as: :file
     = f.input :trivia, as: :text, input_html: { class: "span6", rows: 10 }
-    = f.input :logo, as: :file
+    = f.input :faq,    as: :text, input_html: { class: "span6", rows: 10 }
+    = f.input :rules,  as: :text, input_html: { class: "span6", rows: 10 }
+    = f.input :about,  as: :text, input_html: { class: "span6", rows: 10 }
 
   .form-actions
     = f.button :submit, t("form.submit")

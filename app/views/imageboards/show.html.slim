@@ -1,4 +1,4 @@
 div align="center" 
   = image_tag(imageboard.logo, class: "logo_image")
-  div.well 
-    == render(partial: "trivia", locals: { trivia: imageboard.trivia })
+  .well 
+    == render(partial: "imageboards/md/trivia", locals: { trivia: imageboard.trivia })
