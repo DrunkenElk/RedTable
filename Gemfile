@@ -44,6 +44,9 @@ group :test do
   gem 'capybara', '2.0.1'
   gem 'factory_girl'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'mongoid-rspec'
+  gem 'webmock'
 end
 
 # server

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Ability
   include CanCan::Ability
 
@@ -7,11 +8,11 @@ class Ability
     case user.role
       when 'admin'
         can :manage, :all
+        can :access_to_admin_page, Imageboard
       when 'moderator'
         can :read, Imageboard
+        can :access_to_admin_page, Imageboard
       when 'anonymous'
-        can :read, Imageboard
-      when 'banned'
         can :read, Imageboard
     end
 

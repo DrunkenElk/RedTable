@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Imageboard
   include Mongoid::Document
 
