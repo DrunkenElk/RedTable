@@ -4,7 +4,7 @@ require "application_responder"
 class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
 
-  before_filter :check_format
+  before_filter :check_format, :load_imageboard
   respond_to :html
   protect_from_forgery
 
@@ -23,6 +23,11 @@ private
   def check_format
     request.format = :html if params[:format].blank? || 
       params[:format][/(html|json|xml)/].blank?
+  end
+
+  # for cancanload_and_authorize_resource method 
+  def load_imageboard
+    @imageboard ||= imageboard
   end
 
 end

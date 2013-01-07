@@ -2,20 +2,11 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
-  devise:
-    sign_out: "Выйти"
-    sign_in:
-      caption: "Вход"
-      submit: "Войти"
-
-  unauthorized:
-    manage:
-      all: "У вас нет доступа к данной странице!"
-
   mongoid:
     models:
       imageboard: "Имиджборд"
       user: "Пользователь"
+      section: "Раздел"
     attributes:
       user:
         role: "Роль"
@@ -30,31 +21,18 @@ ru:
         faq: "FAQ"
         rules: "Правила"
         about: "О проекте"
+      section:
+        name: "Название"
+        
+  devise:
+    sign_out: "Выйти"
+    sign_in:
+      caption: "Вход"
+      submit: "Войти"
 
-  application:
-    about: "О проекте"
-    news: "Новости"
-    faq: "FAQ"
-    rules: "Правила"
-
-  users:
-    index:
-      caption: "Список пользователей"
-      new: "Новый пользоватeль"
-    edit:
-      caption: "Редактирование пользователя"
-    new:
-      caption: "Новый пользователь"
-
-  imageboard:
-    edit:
-      caption: "Редактирование имиджборды"
-
-  admin:
-    index:
-      caption: "Панель администратора"
-      imageboard: "Настройки имиджборы"
-      users: "Пользователи"
+  unauthorized:
+    manage:
+      all: "У вас нет доступа к данной странице!"
 
   form:
     submit: "Сохранить"
@@ -67,3 +45,39 @@ ru:
     edit: "Редактировать"
     show: "Показать"
     confirm: "Вы уверены?"
+
+  application:
+    about: "О проекте"
+    news: "Новости"
+    faq: "FAQ"
+    rules: "Правила"
+
+  user:
+    index:
+      caption: "Список пользователей"
+      new: "Новый пользоватeль"
+    edit:
+      caption: "Редактирование пользователя"
+    new:
+      caption: "Новый пользователь"
+
+  section:
+    index:
+      caption: "Список разделов"
+      new: "Новый раздел"
+    edit:
+      caption: "Редактирование раздела"
+    new:
+      caption: "Новый раздел"
+
+  imageboard:
+    edit:
+      caption: "Редактирование имиджборды"
+
+  admin:
+    index:
+      caption: "Панель администратора"
+      imageboard: "Настройки имиджборы"
+      users: "Пользователи"
+      sections: "Разделы"
+

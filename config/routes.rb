@@ -6,7 +6,7 @@ RedTable::Application.routes.draw do
   devise_for :users
   resources :users
 
-  resource :imageboard, defaults: { format: 'html' } do
+  resource :imageboard, only: [:edit, :update, :show] do
     get 'about'
     get 'news'
     get 'faq'
@@ -14,6 +14,8 @@ RedTable::Application.routes.draw do
 
     resources :sections
   end
+
+  resources :sections
 
   root to: 'imageboards#show'
 

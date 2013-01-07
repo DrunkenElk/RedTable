@@ -1,0 +1,6 @@
+.well
+  - sections.each_slice(6) do |row|
+    .row-fluid
+      - row.each do |section|
+        .span2
+          strong = section.name

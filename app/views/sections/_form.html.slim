@@ -1,8 +1,8 @@
-= simple_form_for(@section) do |f|
+= simple_form_for(@section, html: { class: 'form-horizontal well' }) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :name
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, t('form.submit')
