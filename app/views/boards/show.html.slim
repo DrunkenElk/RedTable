@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @board.name
+p
+  strong Logo:
+  = @board.logo
+p
+  strong Trivia:
+  = @board.trivia
+p
+  strong Visibility:
+  = @board.visibility
+p
+  strong Shortcut:
+  = @board.shortcut
+
+= link_to 'Edit', edit_board_path(@board)
+'|
+= link_to 'Back', boards_path

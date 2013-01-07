@@ -22,6 +22,7 @@ gem 'rails_config', '0.3.1'
 gem 'simple_form', '2.0.4'
 gem 'responders', '0.9.3'
 gem 'rdiscount', '~> 1.6.8'
+# gem 'bluecloth'
 
 group :development do
   gem 'pry', '0.9.10'

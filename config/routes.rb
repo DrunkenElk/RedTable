@@ -1,10 +1,10 @@
 # -*- encoding : utf-8 -*-
 RedTable::Application.routes.draw do
 
-  get '/admin' => 'admin#index'
-
   devise_for :users
   resources :users
+
+  get '/admin' => 'admin#index'
 
   resource :imageboard, only: [:edit, :update, :show] do
     get 'about'
@@ -15,7 +15,11 @@ RedTable::Application.routes.draw do
     resources :sections
   end
 
-  resources :sections
+  resources :sections do
+    resources :boards
+  end
+
+  resources :boards
 
   root to: 'imageboards#show'
 
