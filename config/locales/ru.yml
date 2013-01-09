@@ -2,11 +2,15 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  "true": "Да"
+  "false": "Нет"
+
   mongoid:
     models:
       imageboard: "Имиджборд"
       user: "Пользователь"
       section: "Раздел"
+      board: "Доска"
     attributes:
       user:
         role: "Роль"
@@ -23,6 +27,13 @@ ru:
         about: "О проекте"
       section:
         name: "Название"
+      board:
+        name: "Название"
+        logo: "Логотип"
+        trivia: "Описание"
+        visibility: "Видимость"
+        shortcut: "Путь"
+        section: "Раздел"
         
   devise:
     sign_out: "Выйти"
@@ -61,7 +72,18 @@ ru:
     new:
       caption: "Новый пользователь"
 
+  board:
+    index:
+      caption: "Список досок"
+      new: "Новая доска"
+    edit:
+      caption: "Редактирование досок"
+    new:
+      caption: "Новая доска"
+
   section:
+    boards:
+      caption: "Список досок раздела \"%{section}\""
     index:
       caption: "Список разделов"
       new: "Новый раздел"
@@ -69,6 +91,8 @@ ru:
       caption: "Редактирование раздела"
     new:
       caption: "Новый раздел"
+    show:
+      new_board: "Новая доска"
 
   imageboard:
     edit:
@@ -80,4 +104,8 @@ ru:
       imageboard: "Настройки имиджборы"
       users: "Пользователи"
       sections: "Разделы"
+      style: "Изменить стиль"
+    style:
+      notice: "Стиль изменен."
+      select: "Стиль"
 

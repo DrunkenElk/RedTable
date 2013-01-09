@@ -1,21 +1,25 @@
-p#notice = notice
+h2= Board.model_name.human
 
-p
-  strong Name:
-  = @board.name
-p
-  strong Logo:
-  = @board.logo
-p
-  strong Trivia:
-  = @board.trivia
-p
-  strong Visibility:
-  = @board.visibility
-p
-  strong Shortcut:
-  = @board.shortcut
+.well
+  .row-fluid
+    b.span1 = "#{Board.human_attribute_name :name}:"
+    .offset2 = @board.name
+  .row-fluid
+    b.span1 = "#{Board.human_attribute_name :shortcut}:"
+    .offset2 = @board.shortcut
+  .row-fluid
+    b.span1 = "#{Board.human_attribute_name :visibility}:"
+    .offset2 = @board.visibility
+  .row-fluid
+    b.span1 = "#{Board.human_attribute_name :trivia}:"
+    .offset2 = @board.trivia
+  .row-fluid
+    b.span1 = "#{Section.model_name.human}:"
+    .offset2 = @section.name
+  .row-fluid
+    b.span1 = "#{Board.human_attribute_name :logo}:"
+    .offset2 = image_tag(@board.logo)
 
-= link_to 'Edit', edit_board_path(@board)
+= link_to t('form.edit'), edit_section_board_path(@section, @board)
 '|
-= link_to 'Back', boards_path
+= link_to t('form.back'), @section

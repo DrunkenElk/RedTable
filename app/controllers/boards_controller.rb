@@ -1,38 +1,42 @@
 class BoardsController < ApplicationController
-  def index
-    @boards = Board.all
-    respond_with(@boards)
-  end
+  before_filter :find_by_shortcut, :only => :show
+  load_and_authorize_resource :section
+  load_and_authorize_resource through: :section
 
   def show
-    @board = Board.find(params[:id])
     respond_with(@board)
   end
 
   def new
-    @board = Board.new
     respond_with(@board)
   end
 
   def edit
-    @board = Board.find(params[:id])
+    respond_with(@board)
   end
 
   def create
-    @board = Board.new(params[:board])
     @board.save
-    respond_with(@board)
+    redirect_to @section
+    #respond_with(@board)
   end
 
   def update
-    @board = Board.find(params[:id])
     @board.update_attributes(params[:board])
-    respond_with(@board)
+    redirect_to section_path(@section)
+    #respond_with(@board)
   end
 
   def destroy
-    @board = Board.find(params[:id])
     @board.destroy
-    respond_with(@board)
+    redirect_to @section
+    #respond_with(@board)
   end
+
+private
+
+  def find_by_shortcut
+    @board = Board.find_by(shortcut: params[:shortcut]) if params[:shortcut].present?
+  end
+
 end

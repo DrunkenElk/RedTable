@@ -2,6 +2,7 @@
 class Section
   include Mongoid::Document
   belongs_to :imageboard
+  has_many :boards, dependent: :destroy
 
   field :name, type: String
 

@@ -1,9 +1,9 @@
 h2= Section.model_name.human
 
-.well
-  .row-fluid
-    b.span1 = "#{Section.human_attribute_name :name}:"
-    .offset2 = @section.name
+.well.well-small
+  b.span1 = "#{Section.human_attribute_name :name}:"
+  .offset1 = @section.name
+== render(partial: "boards", locals: { section: @section })
 
 = link_to t('form.edit'), edit_section_path(@section)
 '|

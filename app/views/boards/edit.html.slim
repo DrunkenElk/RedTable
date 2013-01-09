@@ -1,8 +1,7 @@
-h1 Editing board
+h3 = t('board.edit.caption')
 
 == render 'form'
 
-= link_to 'Show', @board
+= link_to t('form.show'), [@section, @board]
 '|
-= link_to 'Back', boards_path
-
+= link_to t('form.back'), @section

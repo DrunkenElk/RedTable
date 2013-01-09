@@ -5,4 +5,5 @@ class AdminController < ApplicationController
   def index
     authorize! :access_to_admin_page, imageboard
   end
+
 end
