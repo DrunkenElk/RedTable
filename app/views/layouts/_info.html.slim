@@ -1,0 +1,8 @@
+- if notice.present?
+  .alert.fade.in
+    a.close(data-dismiss="alert" href="#") &times;
+    = notice
+- if alert.present?
+  .alert.alert-block.alert-error.fade.in
+    a.close(data-dismiss="alert" href="#") &times;
+    = alert

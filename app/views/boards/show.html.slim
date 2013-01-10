@@ -9,7 +9,7 @@ h2= Board.model_name.human
     .offset2 = @board.shortcut
   .row-fluid
     b.span1 = "#{Board.human_attribute_name :visibility}:"
-    .offset2 = @board.visibility
+    .offset2 = t(@board.visibility)
   .row-fluid
     b.span1 = "#{Board.human_attribute_name :trivia}:"
     .offset2 = @board.trivia

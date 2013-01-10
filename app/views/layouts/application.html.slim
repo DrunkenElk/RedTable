@@ -19,43 +19,17 @@ html lang="en"
 
   body
 
-    .container-fluid
+    .container-fluid.main-page
 
-      .navbar.navbar-fluid-top
-        .navbar-inner
-          .container-fluid
-            a.btn.btn-navbar data-target=".nav-collapse" data-toggle="collapse"
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-              span.icon-bar
-            a.brand.imageboard-name href="#{root_path}"
-              = imageboard.name
-            .container-fluid.nav-collapse
-              ul.nav
-                li= link_to t('application.about'), about_imageboard_path
-                li= link_to t('application.news'), news_imageboard_path
-                li= link_to t('application.faq'), faq_imageboard_path
-                li= link_to t('application.rules'), rules_imageboard_path
-              = render partial: 'layouts/entrance'
+      = render partial: 'layouts/navbar_fluid'
 
       .row-fluid
         .offset1.span10
-          - if notice.present?
-            .alert.fade.in
-              a.close(data-dismiss="alert" href="#") &times;
-              = notice
-          - if alert.present?
-            .alert.alert-block.alert-error.fade.in
-              a.close(data-dismiss="alert" href="#") &times;
-              = alert
+          = render partial: 'layouts/info'
           = yield
 
-      hr
+      = render partial: 'layouts/footer'
 
-      footer
-        div align="center"
-          p Copyright &copy; 2012 #{mail_to Settings.layout.email, Settings.layout.name}
     /!
       Javascripts
       \==================================================

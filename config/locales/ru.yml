@@ -95,6 +95,8 @@ ru:
       new_board: "Новая доска"
 
   imageboard:
+    show:
+      accordion-root: "Показать все разделы"
     edit:
       caption: "Редактирование имиджборды"
 

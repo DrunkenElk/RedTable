@@ -25,6 +25,6 @@ RedTable::Application.routes.draw do
 
   root to: 'imageboards#show'
 
-  get '/:shortcut' => 'board#show', as: 'shortcut'
+  get '/:shortcut' => 'public_boards#show', as: 'shortcut'
 
 end

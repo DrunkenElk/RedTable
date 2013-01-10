@@ -1,5 +1,5 @@
 div align="center" 
   = image_tag(imageboard.logo_url.to_s, class: "logo_image")
-  .well 
+  .well.well-small 
     = format(imageboard.trivia)
   == render(partial: "sections", locals: { sections: imageboard.sections })

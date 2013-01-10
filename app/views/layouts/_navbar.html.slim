@@ -1,0 +1,17 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.brand.imageboard-name href="#{root_path}"
+        = imageboard.name
+      .container.nav-collapse
+        ul.nav
+          - Section.all.each_with_index do |section, i|
+            li.dropdown
+              a id="section_#{i}" class="dropdown-toggle" data-toggle="dropdown" role="button" href="#"
+                = section.name
+                b.caret
+              ul class="dropdown-menu" aria-labelledby="section_#{i}" role="menu"
+                - section.boards.map do |board|
+                  li.dropdown-board
+                    = link_to board.name, shortcut_path(board.shortcut)
+        = render partial: 'layouts/entrance'

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.11'
 
 # database
 gem 'mongoid', '~> 3.0.16'
@@ -20,6 +20,7 @@ gem 'slim-rails', '~> 1.1.0'
 gem 'jquery-rails', '2.1.4'
 gem 'rails_config', '0.3.1'
 gem 'simple_form', '2.0.4'
+gem 'draper', '~> 0.16.0'
 gem 'responders', '0.9.3'
 gem 'rdiscount', '~> 1.6.8'
 gem 'twitter-bootstrap-rails', '2.1.6'
