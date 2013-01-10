@@ -3,12 +3,12 @@ p
     = t 'imageboard.show.accordion-root' 
 
 .accordion#sections
-  - Section.all.each_with_index do |section, index|
+  - SectionDecorator.all.each_with_index do |section, index|
     - key_collapse = "collapse_#{index}"
     .accordion-group
       .accordion-heading
         a.accordion-toggle data-toggle="collapse" href="##{key_collapse}" data-parent="#sections"
-          = section.name
+          strong = section.name
       .accordion-body.collapse id=key_collapse
         .accordion-inner
           table.table.table-condensed

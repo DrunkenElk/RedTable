@@ -2,6 +2,10 @@ class SectionDecorator < Draper::Base
   decorates :section
   decorates_association :boards
 
+  def boards_by_shortcut
+    ::BoardDecorator.decorate( boards.order_by(shortcut: :desc) )
+  end
+
   # Accessing Helpers
   #   You can access any helper via a proxy
   #

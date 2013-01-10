@@ -5,13 +5,16 @@
         = imageboard.name
       .container.nav-collapse
         ul.nav
-          - Section.all.each_with_index do |section, i|
+          - SectionDecorator.all.each_with_index do |section, i|
             li.dropdown
               a id="section_#{i}" class="dropdown-toggle" data-toggle="dropdown" role="button" href="#"
                 = section.name
                 b.caret
               ul class="dropdown-menu" aria-labelledby="section_#{i}" role="menu"
-                - section.boards.map do |board|
+                - section.boards_by_shortcut.each do |board|
                   li.dropdown-board
-                    = link_to board.name, shortcut_path(board.shortcut)
+                    /= link_to board.dropdown_item, shortcut_path(board.shortcut)
+                    a href=shortcut_path(board.shortcut)
+                      span.full_shortcut_width = board.full_shortcut
+                      span = board.caption
         = render partial: 'layouts/entrance'

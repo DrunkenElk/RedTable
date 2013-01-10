@@ -4,6 +4,11 @@ class BoardDecorator < Draper::Base
   def caption
     name.mb_chars.capitalize.to_s
   end
+
+  def full_shortcut
+    "/#{shortcut}"
+  end
+
   # Accessing Helpers
   #   You can access any helper via a proxy
   #

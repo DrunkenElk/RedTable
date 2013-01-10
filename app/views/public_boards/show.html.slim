@@ -3,5 +3,6 @@ h2= @board.caption
 - if @board.logo.present?
   = image_tag(@board.logo)
 
-.well.well-small
-  strong = @board.trivia
+- if @board.trivia.present?
+  .well.well-small
+    strong = @board.trivia
