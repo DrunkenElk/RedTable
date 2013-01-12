@@ -1,10 +1,22 @@
 h2= Section.model_name.human
 
 .well.well-small
-  b.span1 = "#{Section.human_attribute_name :name}:"
-  .offset1 = @section.name
-== render(partial: "boards", locals: { section: @section })
+  .row-fluid
+    b.span3 = "#{Section.human_attribute_name :name}:"
+    .offset2 = @section.name
+  .row-fluid
+    b.span3 = "#{Section.human_attribute_name :username}:"
+    .offset2 = @section.username
+  .row-fluid
+    b.span3 = "#{Section.human_attribute_name :threadlimit}:"
+    .offset2 = @section.threadlimit
+  .row-fluid
+    b.span3 = "#{Section.human_attribute_name :postlimit}:"
+    .offset2 = @section.postlimit
 
 = link_to t('form.edit'), edit_section_path(@section)
 '|
 = link_to t('form.back'), sections_path
+
+== render(partial: "boards", locals: { section: @section })
+

@@ -20,6 +20,9 @@ ru:
         remember_me: "Запомнить меня"
       imageboard:
         name: "Название"
+        username: "Имя пользователя"
+        threadlimit: "Лимит тредов"
+        postlimit: "Лимит постов"
         logo: "Логотип"
         trivia: "Описание"
         faq: "FAQ"
@@ -27,13 +30,20 @@ ru:
         about: "О проекте"
       section:
         name: "Название"
+        username: "Имя пользователя"
+        threadlimit: "Лимит тредов"
+        postlimit: "Лимит постов"
       board:
         name: "Название"
+        username: "Имя пользователя"
+        threadlimit: "Лимит тредов"
+        postlimit: "Лимит постов"
         logo: "Логотип"
         trivia: "Описание"
         visibility: "Видимость"
         shortcut: "Путь"
         section: "Раздел"
+        posts_counter: "Счетчик постов"
         
   devise:
     sign_out: "Выйти"

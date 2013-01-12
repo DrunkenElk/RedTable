@@ -12,9 +12,9 @@ table.table.table-striped.well
     tr
       td = user.role
       td = user.email
-      td = link_to t('index.show'), user
-      td = link_to t('index.edit'), edit_user_path(user)
-      td = link_to t('index.destroy'), user, :confirm => t('index.confirm'), :method => :delete
+      td = link_to tag('icon', class: 'icon-file'),  user
+      td = link_to tag('icon', class: 'icon-pencil'), edit_user_path(user)
+      td = link_to tag('icon', class: 'icon-remove'), user, :confirm => t('index.confirm'), :method => :delete
 
 br
 

@@ -8,6 +8,18 @@ h2= Board.model_name.human
     b.span1 = "#{Board.human_attribute_name :shortcut}:"
     .offset2 = @board.shortcut
   .row-fluid
+    b.span3 = "#{Section.human_attribute_name :username}:"
+    .offset2 = @board.username
+  .row-fluid
+    b.span3 = "#{Section.human_attribute_name :threadlimit}:"
+    .offset2 = @board.threadlimit
+  .row-fluid
+    b.span3 = "#{Section.human_attribute_name :postlimit}:"
+    .offset2 = @board.postlimit
+  .row-fluid
+    b.span1 = "#{Board.human_attribute_name :posts_counter}:"
+    .offset2 = @board.posts_counter
+  .row-fluid
     b.span1 = "#{Board.human_attribute_name :visibility}:"
     .offset2 = t(@board.visibility)
   .row-fluid

@@ -1,11 +1,14 @@
 // Place all the styles related to the Imageboards controller here.
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
+@brand_color: #DF013A;
+@link_color: #0099DD;
 
 .logo_image { max-height: 200px; }
 
 .board { 
   font-size: small;
+  color: @brand_color;
 }
 
 .main-page { 
@@ -16,6 +19,10 @@
 .dropdown-board {
   font-size: smaller;
   height: 20px;
+}
+
+.dropdown-board-caption {
+  font-size: small;
 }
 
 .accordion-sections {
@@ -29,5 +36,5 @@
 .full_shortcut_width{
   width: 45px;
   display: inline-block;
-  color: #DF013A;
+  color: @brand_color;
 }

@@ -4,7 +4,11 @@ table.table.table-striped.well
   tr
     th = Board.human_attribute_name(:name)
     th = Board.human_attribute_name(:shortcut)
+    th = Board.human_attribute_name(:posts_counter)
     th = Board.human_attribute_name(:visibility)
+    th = Board.human_attribute_name(:username)
+    th = Board.human_attribute_name(:threadlimit)
+    th = Board.human_attribute_name(:postlimit)
     th
     th
     th
@@ -13,10 +17,14 @@ table.table.table-striped.well
     tr
       td = board.name
       td = board.shortcut
+      td = board.posts_counter
       td = t board.visibility.to_s
-      td = link_to t('index.show'), [@section, board]
-      td = link_to t('index.edit'), edit_section_board_path(@section, board)
-      td = link_to t('index.destroy'), [@section, board], 
+      td = board.username
+      td = board.threadlimit
+      td = board.postlimit
+      td = link_to tag('icon', class: 'icon-file'), [@section, board]
+      td = link_to tag('icon', class: 'icon-pencil'), edit_section_board_path(@section, board)
+      td = link_to tag('icon', class: 'icon-remove'), [@section, board], 
         :confirm => t('index.confirm'), :method => :delete
 
 = link_to t('section.show.new_board'), new_section_board_path(@section)

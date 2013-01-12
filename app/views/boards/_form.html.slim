@@ -4,6 +4,10 @@
   .form-inputs
     = f.input :name
     = f.input :shortcut
+    = f.input :username
+    = f.input :threadlimit
+    = f.input :postlimit
+    = f.input :posts_counter
     = f.input :visibility, as: :boolean
     = f.input :logo, as: :file
     /= f.association :section, collection: Section.all

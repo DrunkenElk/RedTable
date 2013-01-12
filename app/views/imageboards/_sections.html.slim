@@ -12,7 +12,7 @@ p
       .accordion-body.collapse id=key_collapse
         .accordion-inner
           table.table.table-condensed
-            - section.boards.each_slice(4) do |row|
+            - section.visible_boards.each_slice(4) do |row|
               tr
                 - row.each do |board|
                   td.board

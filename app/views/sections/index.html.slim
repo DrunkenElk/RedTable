@@ -3,6 +3,9 @@ h3 = t('section.index.caption')
 table.table.table-striped.well
   tr
     th = Section.human_attribute_name(:name)
+    th = Section.human_attribute_name(:username)
+    th = Section.human_attribute_name(:threadlimit)
+    th = Section.human_attribute_name(:postlimit)
     th
     th
     th
@@ -10,9 +13,12 @@ table.table.table-striped.well
   - @sections.each do |section|
     tr
       td = section.name
-      td = link_to t('index.show'), section
-      td = link_to t('index.edit'), edit_section_path(section)
-      td = link_to t('index.destroy'), section, :confirm => t('index.confirm'), :method => :delete
+      td = section.username
+      td = section.threadlimit
+      td = section.postlimit
+      td = link_to tag('icon', class: 'icon-file'), section
+      td = link_to tag('icon', class: 'icon-pencil'), edit_section_path(section)
+      td = link_to tag('icon', class: 'icon-remove'), section, :confirm => t('index.confirm'), :method => :delete
 
 br
 

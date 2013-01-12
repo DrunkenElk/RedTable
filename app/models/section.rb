@@ -6,7 +6,10 @@ class Section
 
   field :name, type: String
 
-  # field :bumplimit, type: Integer
-  # field :threadlimit, type: Integer
+  field :username, type: String
+  field :postlimit, type: Integer
+  field :threadlimit, type: Integer
+
+  attr_accessible :name, :username, :threadlimit, :postlimit
 
 end

@@ -7,6 +7,6 @@ module ApplicationHelper
 
   # Process text with Markdown.                                                                 
   def markdown(text)
-    RDiscount.new(text).to_html
+    RDiscount.new(text).to_html if text.present?
   end
 end
