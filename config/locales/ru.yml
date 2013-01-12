@@ -18,6 +18,9 @@ ru:
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
         remember_me: "Запомнить меня"
+        name: "Имя"
+        color: "Цвет"
+        sign: "Подпись"
       imageboard:
         name: "Название"
         username: "Имя пользователя"

@@ -18,4 +18,6 @@ class Board
   field :threadlimit, type: Integer
 
   field :posts_counter, type: Integer, default: 0
+
+  default_scope order_by(shortcut: :inc)
 end

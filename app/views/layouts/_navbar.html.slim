@@ -12,7 +12,7 @@
                 = section.name
                 b.caret
               ul class="dropdown-menu" aria-labelledby="section_#{i}" role="menu"
-                - section.boards_by_shortcut.each do |board|
+                - section.visible_boards.each do |board|
                   li.dropdown-board
                     a href=shortcut_path(board.shortcut)
                       span.full_shortcut_width = board.full_shortcut

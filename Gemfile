@@ -24,6 +24,7 @@ gem 'draper', '~> 0.16.0'
 gem 'responders', '0.9.3'
 gem 'rdiscount', '~> 1.6.8'
 gem 'twitter-bootstrap-rails', '2.1.6'
+gem 'bootstrap-colorpicker-rails'
 gem 'less-rails', '2.2.3'
 
 group :development do

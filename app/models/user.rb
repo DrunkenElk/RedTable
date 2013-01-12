@@ -30,7 +30,11 @@ class User
   field :last_sign_in_at,    type: Time
   field :current_sign_in_ip, type: String
   field :last_sign_in_ip,    type: String
+
   field :role,               type: String, default: 'anonymous'
+  field :name,               type: String, default: 'anonymous'
+  field :color,              type: String, default: '#000000'
+  field :sign,               type: Boolean, default: false
 
   ## Confirmable
   # field :confirmation_token,   type: String
@@ -46,5 +50,18 @@ class User
   ## Token authenticatable
   # field :authentication_token, type: String
 
-  attr_accessible :email, :password, :role, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :role, :password_confirmation, :remember_me,
+                  :name, :color, :sign
+
+  default_scope order_by(email: :inc) 
+
 end
+
+
+
+
+
+
+
+
+

@@ -2,11 +2,6 @@ class SectionDecorator < Draper::Base
   decorates :section
   decorates_association :boards
 
-  def boards_by_shortcut
-    ::BoardDecorator.decorate( boards.where(visibility: true).
-                                      order_by(shortcut: :inc) )
-  end
-
   def visible_boards
     ::BoardDecorator.decorate( boards.where(visibility: true) )
   end
