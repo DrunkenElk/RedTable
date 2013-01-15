@@ -1,0 +1,35 @@
+h1 Listing posts
+
+table
+  tr
+    th Email
+    th Theme
+    th Comment
+    th File
+    th Password
+    th Number
+    th Attached
+    th Postlimit
+    th Ip
+    th
+    th
+    th
+
+  - @posts.each do |post|
+    tr
+      td = post.email
+      td = post.theme
+      td = post.comment
+      td = post.file
+      td = post.password
+      td = post.number
+      td = post.attached
+      td = post.postlimit
+      td = post.ip
+      td = link_to 'Show', post
+      td = link_to 'Edit', edit_post_path(post)
+      td = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Post', new_post_path

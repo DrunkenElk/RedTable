@@ -1,0 +1,33 @@
+p#notice = notice
+
+p
+  strong Email:
+  = @post.email
+p
+  strong Theme:
+  = @post.theme
+p
+  strong Comment:
+  = @post.comment
+p
+  strong File:
+  = @post.file
+p
+  strong Password:
+  = @post.password
+p
+  strong Number:
+  = @post.number
+p
+  strong Attached:
+  = @post.attached
+p
+  strong Postlimit:
+  = @post.postlimit
+p
+  strong Ip:
+  = @post.ip
+
+= link_to 'Edit', edit_post_path(@post)
+'|
+= link_to 'Back', posts_path

@@ -1,6 +1,7 @@
 class Board
   include Mongoid::Document
   belongs_to :section
+  has_many :threads, class_name: "Post", dependent: :destroy
 
   mount_uploader :logo, ::LogoUploader
 
