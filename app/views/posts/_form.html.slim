@@ -1,16 +1,19 @@
-= simple_form_for(@post) do |f|
+= simple_form_for(@post, html: { class: 'form-horizontal' }) do |f|
   = f.error_notification
 
   .form-inputs
     = f.input :email
     = f.input :theme
-    = f.input :comment
-    = f.input :file
+    = f.input :comment, as: :text, input_html: { rows: 2 }
+
+    .control-group.file.optional
+      = label_tag :file, Post.human_attribute_name("file"), class: 'control-label file optional'
+      .controls.input-mini
+        = file_field_tag 'post[file]', class: 'file optional'
+
     = f.input :password
-    = f.input :number
-    = f.input :attached
-    = f.input :postlimit
-    = f.input :ip
+    - if role?(:admin)
+      = f.input :attached, as: :boolean
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, t('form.submit')

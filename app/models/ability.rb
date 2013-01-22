@@ -14,10 +14,12 @@ class Ability
       when 'moderator'
         can :read, Imageboard
         can :read, Board
+        can :manage, Post
         can :access_to_admin_page, Imageboard
       when 'anonymous'
         can :read, Imageboard
         can :read, Board
+        can :manage, Post
     end
 
   end

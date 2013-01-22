@@ -9,4 +9,9 @@ module ApplicationHelper
   def markdown(text)
     RDiscount.new(text).to_html if text.present?
   end
+
+  #check role
+  def role?(role)
+    current_user && current_user.role?(role)
+  end
 end

@@ -1,9 +1,6 @@
 # -*- encoding : utf-8 -*-
 RedTable::Application.routes.draw do
 
-  resources :posts
-
-
   devise_for :users
   resources :users
 
@@ -26,8 +23,13 @@ RedTable::Application.routes.draw do
 
   resources :boards, except: :index
 
+  scope "/:shortcut" do
+    resources :posts, only: [:show, :create, :destroy]
+  end
+
   root to: 'imageboards#show'
 
-  get '/:shortcut' => 'public_boards#show', as: 'shortcut'
+  get '/:shortcut/:post' => 'posts#show', as: 'thread'
+  get '/:shortcut' => 'posts#index', as: 'shortcut'
 
 end

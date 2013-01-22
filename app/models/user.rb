@@ -55,6 +55,9 @@ class User
 
   default_scope order_by(email: :inc) 
 
+  def role?(user_role)
+    role == user_role.to_s
+  end
 end
 
 

@@ -1,35 +1,19 @@
-h1 Listing posts
+h3= @board.caption
 
-table
-  tr
-    th Email
-    th Theme
-    th Comment
-    th File
-    th Password
-    th Number
-    th Attached
-    th Postlimit
-    th Ip
-    th
-    th
-    th
+- if @board.logo.present?
+  = image_tag(@board.logo)
 
-  - @posts.each do |post|
-    tr
-      td = post.email
-      td = post.theme
-      td = post.comment
-      td = post.file
-      td = post.password
-      td = post.number
-      td = post.attached
-      td = post.postlimit
-      td = post.ip
-      td = link_to 'Show', post
-      td = link_to 'Edit', edit_post_path(post)
-      td = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
+- if @board.trivia.present?
+  .well.well-small
+    strong = @board.trivia
 
-br
-
-= link_to 'New Post', new_post_path
+.new-thread
+  .accordion#new-thread
+    .accordion-group
+      .accordion-heading
+        a.accordion-toggle data-toggle="collapse" href="#new-thread-form" data-parent="#new-thread"
+          strong = t('public_board.show.new_thread')
+      .accordion-body.collapse id='new-thread-form'
+        .accordion-inner
+          span.new-thread-form
+            = render partial: 'posts/form' 

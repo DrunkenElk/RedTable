@@ -11,6 +11,7 @@ ru:
       user: "Пользователь"
       section: "Раздел"
       board: "Доска"
+      post: "Сообщение"
     attributes:
       user:
         role: "Роль"
@@ -47,6 +48,16 @@ ru:
         shortcut: "Путь"
         section: "Раздел"
         posts_counter: "Счетчик постов"
+      post:
+        email: "Email"
+        theme: "Тема"
+        comment: "Сообщение"
+        file: "Файл"
+        password: "Пароль"
+        number: "№"
+        attached: "Прикрепленный"
+        postlimit: "Лими постов"
+        ip: "IP"
         
   devise:
     sign_out: "Выйти"
@@ -84,6 +95,10 @@ ru:
       caption: "Редактирование пользователя"
     new:
       caption: "Новый пользователь"
+
+  public_board:
+    show:
+      new_thread: "Новый тред"
 
   board:
     index:

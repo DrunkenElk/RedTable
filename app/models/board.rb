@@ -21,4 +21,10 @@ class Board
   field :posts_counter, type: Integer, default: 0
 
   default_scope order_by(shortcut: :inc)
+
+  def get_number
+    self.posts_counter += 1
+    self.save
+    self.posts_counter
+  end
 end
