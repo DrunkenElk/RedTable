@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BoardsController < ApplicationController
   load_and_authorize_resource :section
   load_and_authorize_resource through: :section

@@ -114,8 +114,13 @@ ru:
     new:
       caption: "Новый пользователь"
 
-  public_board:
+  post:
     show:
+      attached: "Тред прикреплен"
+      hide: "Скрыть"
+      expand: "Развернуть"
+      quick_reply: "Быстрый ответ"
+      reply: "Ответ"
       new_thread: "Новый тред"
 
   board:

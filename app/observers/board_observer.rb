@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BoardObserver < Mongoid::Observer
   def after_build(board)
     section = board.section

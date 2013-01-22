@@ -1,10 +1,34 @@
 .row-fluid
   .thread.well.well-small
-    = post.username
-    = post.attached
-    = post.theme
-    = l(post.created_at)
+    - if post.theme.present?
+      span.theme
+        = post.theme
+    span.username
+      = post.username
+    span.timestamp
+      = l(post.created_at)
+    span.number
+      = post.full_number
+    
+    - if post.thread?
+      - if post.attached
+        a href="#" title=t("post.show.attached")
+          i.icon.icon-lock
+      a href="#" title=t("post.show.hide")
+        i.icon.icon-minus
+      a href="#" title=t("post.show.expand")
+        i.icon.icon-move
+      a href="#" title=t("post.show.quick_reply")
+        i.icon.icon-play
+    
+    span.reply
+      == "[#{ link_to(t("post.show.reply"), "#") }]"
+    
     br
-    = post.number
-    = image_tag(post.image.small.url) if post.image.present?
-    = post.comment
+    .post-content
+      - if post.image.present?
+        .image
+          a href=post.image.url
+            = image_tag(post.image.small.url)
+      .comment
+        = post.comment

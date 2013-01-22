@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class BoardDecorator < Draper::Base
   decorates :board
 

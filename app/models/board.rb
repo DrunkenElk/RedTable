@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Board
   include Mongoid::Document
   belongs_to :section

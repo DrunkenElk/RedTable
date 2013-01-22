@@ -1,7 +1,45 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
+@brand_color: #DF013A;
+@link_color: #0099DD;
 
 .thread {
   display: inline-block;
+  .theme { 
+    color: @link_color;
+    font-weight: bold;
+    font-size: large;
+    margin: 0 5px 0 0;
+  }
+  .username {
+    font-weight: bold;
+    margin: 0 5px;
+  }
+  .timestamp {
+    margin: 0 5px;
+    font-size: small;
+  }
+  .number {
+    margin: 0 5px;
+    font-weight: bold;
+  }
+  .icon {
+    margin: 0 2px;
+  }
+  .reply {
+    margin: 0 0 0 20px;
+  }
+  .post-content {
+    .image {
+      /*float: left;*/
+      padding: 5px;
+      display: inline-block;
+    }
+    .comment {
+      padding: 20px 5px 5px 5px;
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
 }

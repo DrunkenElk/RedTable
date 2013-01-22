@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class SectionDecorator < Draper::Base
   decorates :section
   decorates_association :boards

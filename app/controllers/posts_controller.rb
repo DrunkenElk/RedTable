@@ -1,9 +1,10 @@
+# -*- encoding : utf-8 -*-
 class PostsController < ApplicationController
   before_filter :find_by_shortcut
   layout 'board'
 
   def index
-    @threads = @board.threads.page(params[:page])
+    @threads = ::PostDecorator.decorate(@board.threads.page(params[:page]))
     @post = @board.threads.build
     respond_with(@posts)
   end

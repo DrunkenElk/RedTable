@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class PostObserver < Mongoid::Observer
   def after_build(post)
     if post.thread?

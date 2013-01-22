@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class Post
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -22,7 +23,9 @@ class Post
   default_scope order_by(attached: :desc).order_by(updated_at: :asc)
 
   mount_uploader :image, ::ImageUploader
+
   validates :image, file_size: { maximum: 2.megabytes.to_i }
+  validates :comment, presence: true
 
   attr_accessible :email, :theme, :comment, :image, 
                   :password, :number, :attached

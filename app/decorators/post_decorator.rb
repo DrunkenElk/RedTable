@@ -1,5 +1,10 @@
+# -*- encoding : utf-8 -*-
 class PostDecorator < Draper::Base
   decorates :post
+
+  def full_number
+    "№ #{number}"
+  end
 
   # Accessing Helpers
   #   You can access any helper via a proxy
