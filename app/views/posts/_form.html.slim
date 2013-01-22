@@ -1,4 +1,4 @@
-= simple_form_for(@post, html: { class: 'form-horizontal' }) do |f|
+= simple_form_for(@post, html: { multipart: true, class: 'form-horizontal' }) do |f|
   = f.error_notification
 
   .form-inputs
@@ -7,9 +7,9 @@
     = f.input :comment, as: :text, input_html: { rows: 2 }
 
     .control-group.file.optional
-      = label_tag :file, Post.human_attribute_name("file"), class: 'control-label file optional'
+      = label_tag :image, Post.human_attribute_name("image"), class: 'control-label file optional'
       .controls.input-mini
-        = file_field_tag 'post[file]', class: 'file optional'
+        = file_field_tag 'post[image]', class: 'file optional'
 
     = f.input :password
     - if role?(:admin)

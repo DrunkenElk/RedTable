@@ -17,3 +17,7 @@ h3= @board.caption
         .accordion-inner
           span.new-thread-form
             = render partial: 'posts/form' 
+
+- @threads.each do |thread|
+  = render template: 'posts/show', locals: { post: thread }
+= paginate @threads, :params => {:controller => 'posts', :action => 'index'}

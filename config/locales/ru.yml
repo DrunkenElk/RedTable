@@ -52,12 +52,30 @@ ru:
         email: "Email"
         theme: "Тема"
         comment: "Сообщение"
-        file: "Файл"
+        image: "Файл"
         password: "Пароль"
         number: "№"
         attached: "Прикрепленный"
         postlimit: "Лими постов"
         ip: "IP"
+
+  errors:
+    messages:
+      wrong_size: "некорректный размер (должен быть %{file_size})"
+      size_too_small: "слишком маленький размер (должен быть не менее %{file_size})"
+      size_too_big: "слишком большой размер (должен быть не более %{file_size})"
+
+  views:
+    pagination:
+      first: "&laquo; Начало"
+      last: "Конец &raquo;"
+      previous: "&lsaquo; Пред."
+      next: "След. &rsaquo;"
+      truncate: "..."
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M:%S"
         
   devise:
     sign_out: "Выйти"

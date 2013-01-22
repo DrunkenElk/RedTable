@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   layout 'board'
 
   def index
-    @posts = @board.threads
+    @threads = @board.threads.page(params[:page])
     @post = @board.threads.build
     respond_with(@posts)
   end
@@ -51,5 +51,6 @@ private
     end
     @post.ip = request.remote_ip
     @post.number = @board.get_number
+    @post.updated_at = DateTime.now
   end
 end

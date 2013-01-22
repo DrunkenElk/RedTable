@@ -26,6 +26,7 @@ gem 'rdiscount', '~> 1.6.8'
 gem 'twitter-bootstrap-rails', '2.1.6'
 gem 'bootstrap-colorpicker-rails'
 gem 'less-rails', '2.2.3'
+gem 'kaminari'
 
 group :development do
   gem 'pry', '0.9.10'
