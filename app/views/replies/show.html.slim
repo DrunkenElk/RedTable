@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Email:
+  = @reply.email
+p
+  strong Theme:
+  = @reply.theme
+p
+  strong Comment:
+  = @reply.comment
+p
+  strong Image:
+  = @reply.image
+p
+  strong Password:
+  = @reply.password
+p
+  strong Ip:
+  = @reply.ip
+p
+  strong Username:
+  = @reply.username
+
+= link_to 'Edit', edit_reply_path(@reply)
+'|
+= link_to 'Back', replies_path

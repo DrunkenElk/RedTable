@@ -11,7 +11,7 @@ ru:
       user: "Пользователь"
       section: "Раздел"
       board: "Доска"
-      post: "Сообщение"
+      branch: "Тред"
     attributes:
       user:
         role: "Роль"
@@ -48,7 +48,7 @@ ru:
         shortcut: "Путь"
         section: "Раздел"
         posts_counter: "Счетчик постов"
-      post:
+      branch:
         email: "Email"
         theme: "Тема"
         comment: "Сообщение"
@@ -114,7 +114,7 @@ ru:
     new:
       caption: "Новый пользователь"
 
-  post:
+  branch:
     show:
       attached: "Тред прикреплен"
       hide: "Скрыть"
@@ -122,6 +122,7 @@ ru:
       quick_reply: "Быстрый ответ"
       reply: "Ответ"
       new_thread: "Новый тред"
+      new_post: "Новое сообщение"
 
   board:
     index:

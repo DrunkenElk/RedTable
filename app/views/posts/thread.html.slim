@@ -1,0 +1,15 @@
+a href=shortcut_path(@board.shortcut)
+  h3= @board.caption
+
+- if @board.logo.present?
+  = image_tag(@board.logo)
+
+- if @board.trivia.present?
+  .well.well-small
+    strong = @board.trivia
+
+= render partial: 'posts/form', locals: { caption: t('post.show.new_post') } 
+
+= render template: 'posts/show', locals: { post: @thread }
+- @replies.each do |reply|
+  = render template: 'posts/show', locals: { post: reply }

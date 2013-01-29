@@ -1,0 +1,32 @@
+.row-fluid
+  .thread.well.well-small
+    - if branch.theme.present?
+      span.theme
+        = branch.theme
+    span.username
+      = branch.username
+    span.timestamp
+      = l(branch.created_at)
+    span.number
+      = branch.full_number
+
+    /- if branch.attached
+      a href="#" title=t("branch.show.attached")
+        i.icon.icon-lock
+      a href="#" title=t("branch.show.hide")
+        i.icon.icon-minus
+      a href="#" title=t("branch.show.expand")
+        i.icon.icon-move
+      a href="#" title=t("branch.show.quick_reply")
+        i.icon.icon-play
+
+    span.reply
+      == "[#{ link_to(t("branch.show.reply"), branch_path(shortcut: params[:shortcut], number: branch.number)) }]"
+
+    .post-content
+      - if branch.image.present?
+        .image
+          a href=branch.image.url
+            = image_tag(branch.image.small.url)
+      .comment
+        = branch.comment

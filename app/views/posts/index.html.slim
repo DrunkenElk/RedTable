@@ -1,4 +1,5 @@
-h3= @board.caption
+a href=shortcut_path(@board.shortcut)
+  h3= @board.caption
 
 - if @board.logo.present?
   = image_tag(@board.logo)
@@ -7,17 +8,9 @@ h3= @board.caption
   .well.well-small
     strong = @board.trivia
 
-.new-thread
-  .accordion#new-thread
-    .accordion-group
-      .accordion-heading
-        a.accordion-toggle data-toggle="collapse" href="#new-thread-form" data-parent="#new-thread"
-          strong = t('post.show.new_thread')
-      .accordion-body.collapse id='new-thread-form'
-        .accordion-inner
-          span.new-thread-form
-            = render partial: 'posts/form' 
+= render partial: 'posts/form', locals: { caption: t('post.show.new_thread') } 
 
 - @threads.each do |thread|
   = render template: 'posts/show', locals: { post: thread }
-= paginate @threads, :params => {:controller => 'posts', :action => 'index'}
+  hr
+= paginate @threads, params: { controller: 'posts', :action => 'index' }

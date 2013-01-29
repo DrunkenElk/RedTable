@@ -4,9 +4,15 @@ class PostsController < ApplicationController
   layout 'board'
 
   def index
-    @threads = ::PostDecorator.decorate(@board.threads.page(params[:page]))
-    @post = @board.threads.build
-    respond_with(@posts)
+    @threads = @source.page(params[:page]).decorate
+    @post = @source.build
+    respond_with(@threads)
+  end
+
+  def thread
+    @replies = @source.page(params[:page]).decorate
+    @post = @source.build
+    respond_with(@replies)
   end
 
   def show
@@ -22,10 +28,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = @board.threads.build(params[:post])
+    @post = @source.build(params[:post])
     set_hidden_fields
     @post.save
-    redirect_to shortcut_path(params[:shortcut])
+    redirect_to @source_path
   end
 
   def update
@@ -43,6 +49,18 @@ private
   def find_by_shortcut
     if params[:shortcut].present?
       @board = ::BoardDecorator.new( Board.find_by(shortcut: params[:shortcut]) )
+    end
+
+    if params[:thread].present?
+      @thread = ::PostDecorator.new( Post.find_by(number: params[:thread]) )
+    end
+
+    if @thread.present?
+      @source = @thread.replies
+      @source_path = thread_path(shortcut: @board.shortcut, thread: @thread.number)
+    else
+      @source = @board.threads
+      @source_path = shortcut_path(@board.shortcut)
     end
   end
 

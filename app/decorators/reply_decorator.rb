@@ -1,16 +1,5 @@
-# -*- encoding : utf-8 -*-
-class BoardDecorator < Draper::Base
-  decorates :board
-  decorates_association :threads
-  decorates_association :replies
-
-  def caption
-    name.mb_chars.capitalize.to_s
-  end
-
-  def full_shortcut
-    "/#{shortcut}"
-  end
+class ReplyDecorator < Draper::Base
+  decorates :reply
 
   # Accessing Helpers
   #   You can access any helper via a proxy

@@ -7,29 +7,25 @@
       .accordion-body.collapse id='new-thread-form'
         .accordion-inner
           span.new-thread-form
-            = simple_form_for(@post, html: { multipart: true, class: 'form-horizontal' }) do |f|
+            = simple_form_for(@branch, html: { multipart: true, class: 'form-horizontal' }) do |f|
               = f.error_notification
-            
+
               .form-inputs
                 = f.input :email
 
-                - if @post.thread?
-                  = f.input :theme
+                = f.input :theme
 
                 = f.input :comment, as: :text, input_html: { rows: 2 }
 
                 .control-group.file.optional
-                  = label_tag :image, Post.human_attribute_name("image"), class: 'control-label file optional'
+                  = label_tag :image, Branch.human_attribute_name("image"), class: 'control-label file optional'
                   .controls.input-mini
-                    = file_field_tag 'post[image]', class: 'file optional'
+                    = file_field_tag 'branch[image]', class: 'file optional'
 
                 = f.input :password
 
-                - if role?(:admin) && @post.thread?
+                - if role?(:admin)
                   = f.input :attached, as: :boolean
-
-                - if @thread.present?
-                  = hidden_field_tag "thread", @thread.number
 
               .form-actions
                 = f.button :submit, t('form.submit')

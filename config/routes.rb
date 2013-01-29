@@ -23,15 +23,17 @@ RedTable::Application.routes.draw do
 
   resources :boards, except: :index
 
-  get '/:shortcut/:page' => 'posts#index'
-  get '/:shortcut/:post' => 'posts#show', as: 'thread'
-  get '/:shortcut' => 'posts#index', as: 'shortcut'
+  get '/:shortcut/:number' => 'branches#show', as: 'branch'
+  get '/:shortcut' => 'branches#index', as: 'shortcut'
 
   scope "/:shortcut" do
-    resources :posts, only: [:index, :show, :create, :destroy]
+    resources :branches
+    resources :replies
   end
 
-  root to: 'imageboards#show'
+  resources :replies
+  resources :branches
 
+  root to: 'imageboards#show'
 
 end
