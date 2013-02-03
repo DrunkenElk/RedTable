@@ -34,6 +34,8 @@ group :development do
   gem 'awesome_print', :require => 'ap'
   gem 'magic_encoding'
   gem 'foreman'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :assets do

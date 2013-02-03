@@ -56,7 +56,14 @@ ru:
         password: "Пароль"
         number: "№"
         attached: "Прикрепленный"
-        postlimit: "Лими постов"
+        postlimit: "Лимит постов"
+        ip: "IP"
+      reply:
+        email: "Email"
+        comment: "Сообщение"
+        image: "Файл"
+        password: "Пароль"
+        number: "№"
         ip: "IP"
 
   errors:
@@ -121,8 +128,15 @@ ru:
       expand: "Развернуть"
       quick_reply: "Быстрый ответ"
       reply: "Ответ"
-      new_thread: "Новый тред"
-      new_post: "Новое сообщение"
+      new: "Новый тред"
+
+  reply:
+    show:
+      hide: "Скрыть"
+      expand: "Развернуть"
+      quick_reply: "Быстрый ответ"
+      reply: "Ответ"
+      new: "Новое сообщение"
 
   board:
     index:

@@ -23,16 +23,13 @@ RedTable::Application.routes.draw do
 
   resources :boards, except: :index
 
-  get '/:shortcut/:number' => 'branches#show', as: 'branch'
-  get '/:shortcut' => 'branches#index', as: 'shortcut'
-
   scope "/:shortcut" do
     resources :branches
     resources :replies
   end
 
-  resources :replies
-  resources :branches
+  get '/:shortcut/:number' => 'replies#index', as: 'thread'
+  get '/:shortcut' => 'branches#index', as: 'shortcut'
 
   root to: 'imageboards#show'
 

@@ -1,14 +1,5 @@
-a href=shortcut_path(@board.shortcut)
-  h3= @board.caption
-
-- if @board.logo.present?
-  = image_tag(@board.logo)
-
-- if @board.trivia.present?
-  .well.well-small
-    strong = @board.trivia
-
-= render partial: 'branches/form', locals: { caption: t('branch.show.new_thread') } 
+= render partial: 'shared/board_header', locals: { board: @board } 
+= render partial: 'branches/form', locals: { caption: t('branch.show.new') } 
 
 - @branches.each do |branch|
   = render template: 'branches/show', locals: { branch: branch }

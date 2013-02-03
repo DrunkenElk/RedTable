@@ -21,7 +21,7 @@
         i.icon.icon-play
 
     span.reply
-      == "[#{ link_to(t("branch.show.reply"), branch_path(shortcut: params[:shortcut], number: branch.number)) }]"
+      == "[#{ link_to(t("branch.show.reply"), thread_path(shortcut: params[:shortcut], number: branch.number)) }]"
 
     .post-content
       - if branch.image.present?

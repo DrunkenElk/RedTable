@@ -5,6 +5,7 @@ class Branch
   paginates_per 5
 
   belongs_to :board
+  has_many :replies, dependent: :destroy
 
   field :email, type: String
   field :theme, type: String

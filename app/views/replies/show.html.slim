@@ -1,27 +1,18 @@
-p#notice = notice
+.row-fluid
+  .thread.well.well-small
+    span.username
+      = reply.username
+    span.timestamp
+      = l(reply.created_at)
+    span.number
+      = reply.full_number
+    span.reply
+      == "[#{ link_to(t("reply.show.reply"), thread_path(shortcut: params[:shortcut], number: reply.number)) }]"
 
-p
-  strong Email:
-  = @reply.email
-p
-  strong Theme:
-  = @reply.theme
-p
-  strong Comment:
-  = @reply.comment
-p
-  strong Image:
-  = @reply.image
-p
-  strong Password:
-  = @reply.password
-p
-  strong Ip:
-  = @reply.ip
-p
-  strong Username:
-  = @reply.username
-
-= link_to 'Edit', edit_reply_path(@reply)
-'|
-= link_to 'Back', replies_path
+    .post-content
+      - if reply.image.present?
+        .image
+          a href=reply.image.url
+            = image_tag(reply.image.small.url)
+      .comment
+        = reply.comment

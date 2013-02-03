@@ -1,31 +1,7 @@
-h1 Listing replies
+= render partial: 'shared/board_header', locals: { board: @board } 
+= render partial: 'replies/form', locals: { caption: t('reply.show.new') } 
 
-table
-  tr
-    th Email
-    th Theme
-    th Comment
-    th Image
-    th Password
-    th Ip
-    th Username
-    th
-    th
-    th
-
-  - @replies.each do |reply|
-    tr
-      td = reply.email
-      td = reply.theme
-      td = reply.comment
-      td = reply.image
-      td = reply.password
-      td = reply.ip
-      td = reply.username
-      td = link_to 'Show', reply
-      td = link_to 'Edit', edit_reply_path(reply)
-      td = link_to 'Destroy', reply, :confirm => 'Are you sure?', :method => :delete
-
-br
-
-= link_to 'New Reply', new_reply_path
+= render template: 'branches/show', locals: { branch: @branch }
+= paginate @replies, params: { controller: 'replies', :action => 'index' }
+- @replies.each do |reply|
+  = render template: 'replies/show', locals: { reply: reply }

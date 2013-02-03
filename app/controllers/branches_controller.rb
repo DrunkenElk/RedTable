@@ -17,10 +17,6 @@ class BranchesController < ApplicationController
     respond_with(@branch)
   end
 
-  def edit
-    respond_with(@branch)
-  end
-
   def create
     @branch = @board.branches.build(params[:branch])
     set_hidden_fields
@@ -28,15 +24,10 @@ class BranchesController < ApplicationController
     redirect_to shortcut_path(@board.shortcut)
   end
 
-  def update
-    @branch.update_attributes(params[:branch])
-    respond_with(@branch)
-  end
-
-  def destroy
-    @branch.destroy
-    respond_with(@branch)
-  end
+  #def destroy
+    #@branch.destroy
+    #respond_with(@branch)
+  #end
 
 private
 
