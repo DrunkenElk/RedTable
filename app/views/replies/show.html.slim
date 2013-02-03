@@ -7,7 +7,7 @@
     span.number
       = reply.full_number
     span.reply
-      == "[#{ link_to(t("reply.show.reply"), thread_path(shortcut: params[:shortcut], number: reply.number)) }]"
+      == "[#{ link_to(t("reply.show.reply"), thread_path(shortcut: params[:shortcut], number: reply.branch.number)) }]"
 
     .post-content
       - if reply.image.present?
