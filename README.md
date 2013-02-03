@@ -3,13 +3,8 @@
 **RedTable** - минималистичный движок для анонимных имиджборд,
 написанный на [Ruby][0] [on Rails][1]. 
 
-[/Б/][2]ред в наличии.
-Исходный код на [Гитхабе][3]
-
 [0]: http://www.ruby-lang.org/en/
 [1]: http://rubyonrails.org/
-[2]: /b
-[3]: https://github.com/DrunkenElk/RedTable.git
 
 
 ### ToDo:
