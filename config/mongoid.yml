@@ -22,4 +22,4 @@ production:
   sessions:
     default:
       database: red_table_production
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      <<: *defaults
