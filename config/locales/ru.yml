@@ -1,0 +1,187 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+ru:
+  "true": "Да"
+  "false": "Нет"
+
+  mongoid:
+    models:
+      imageboard: "Имиджборд"
+      user: "Пользователь"
+      section: "Раздел"
+      board: "Доска"
+      branch: "Тред"
+    attributes:
+      user:
+        role: "Роль"
+        email: "Почта"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        remember_me: "Запомнить меня"
+        name: "Имя"
+        color: "Цвет"
+        sign: "Подпись"
+      imageboard:
+        name: "Название"
+        username: "Имя пользователя"
+        threadlimit: "Лимит тредов"
+        postlimit: "Лимит постов"
+        logo: "Логотип"
+        trivia: "Описание"
+        faq: "FAQ"
+        rules: "Правила"
+        about: "О проекте"
+      section:
+        name: "Название"
+        username: "Имя пользователя"
+        threadlimit: "Лимит тредов"
+        postlimit: "Лимит постов"
+      board:
+        name: "Название"
+        username: "Имя пользователя"
+        threadlimit: "Лимит тредов"
+        postlimit: "Лимит постов"
+        logo: "Логотип"
+        trivia: "Описание"
+        visibility: "Видимость"
+        shortcut: "Путь"
+        section: "Раздел"
+        posts_counter: "Счетчик постов"
+      branch:
+        email: "Email"
+        theme: "Тема"
+        comment: "Сообщение"
+        image: "Файл"
+        password: "Пароль"
+        number: "№"
+        attached: "Прикрепленный"
+        postlimit: "Лимит постов"
+        ip: "IP"
+      reply:
+        email: "Email"
+        comment: "Сообщение"
+        image: "Файл"
+        password: "Пароль"
+        number: "№"
+        ip: "IP"
+
+  errors:
+    messages:
+      wrong_size: "некорректный размер (должен быть %{file_size})"
+      size_too_small: "слишком маленький размер (должен быть не менее %{file_size})"
+      size_too_big: "слишком большой размер (должен быть не более %{file_size})"
+
+  views:
+    pagination:
+      first: "&laquo; Начало"
+      last: "Конец &raquo;"
+      previous: "&lsaquo; Пред."
+      next: "След. &rsaquo;"
+      truncate: "..."
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M:%S"
+        
+  devise:
+    sign_out: "Выйти"
+    sign_in:
+      caption: "Вход"
+      submit: "Войти"
+
+  simple_captcha:
+    form_label: "Капча"
+    label: "Введите символы"
+    placeholder: "Введите символы"
+    message:
+      default: "Секретный код не совпадает с изображением"
+      user: "Секретный код не совпадает с изображением"
+
+  unauthorized:
+    manage:
+      all: "У вас нет доступа к данной странице!"
+
+  form:
+    submit: "Сохранить"
+    back: "Назад"
+    show: "Показать"
+    edit: "Редактировать"
+
+  index:
+    destroy: "Удалить"
+    edit: "Редактировать"
+    show: "Показать"
+    confirm: "Вы уверены?"
+
+  application:
+    about: "О проекте"
+    news: "Новости"
+    faq: "FAQ"
+    rules: "Правила"
+
+  user:
+    index:
+      caption: "Список пользователей"
+      new: "Новый пользоватeль"
+    edit:
+      caption: "Редактирование пользователя"
+    new:
+      caption: "Новый пользователь"
+
+  branch:
+    show:
+      attached: "Тред прикреплен"
+      hide: "Скрыть"
+      expand: "Развернуть"
+      quick_reply: "Быстрый ответ"
+      reply: "Ответ"
+      new: "Новый тред"
+
+  reply:
+    show:
+      hide: "Скрыть"
+      expand: "Развернуть"
+      quick_reply: "Быстрый ответ"
+      reply: "Ответ"
+      new: "Новое сообщение"
+
+  board:
+    index:
+      caption: "Список досок"
+      new: "Новая доска"
+    edit:
+      caption: "Редактирование досок"
+    new:
+      caption: "Новая доска"
+
+  section:
+    boards:
+      caption: "Список досок раздела \"%{section}\""
+    index:
+      caption: "Список разделов"
+      new: "Новый раздел"
+    edit:
+      caption: "Редактирование раздела"
+    new:
+      caption: "Новый раздел"
+    show:
+      new_board: "Новая доска"
+
+  imageboard:
+    show:
+      accordion-root: "Показать все разделы"
+    edit:
+      caption: "Редактирование имиджборды"
+
+  admin:
+    index:
+      caption: "Панель администратора"
+      imageboard: "Настройки имиджборы"
+      users: "Пользователи"
+      sections: "Разделы"
+      style: "Изменить стиль"
+    style:
+      notice: "Стиль изменен."
+      select: "Стиль"
+

@@ -1,0 +1,9 @@
+- if user_signed_in?
+  ul.nav.pull-right
+    li
+      p
+        a href="#{admin_path}"
+          h5= current_user.role
+    li.divider-vertical
+    li
+      = link_to(t('devise.sign_out'), destroy_user_session_path, :method => :delete)

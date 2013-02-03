@@ -1,58 +1,36 @@
+# -*- encoding : utf-8 -*-
 RedTable::Application.routes.draw do
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  devise_for :users
+  resources :users
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  scope 'admin', as: :admin do
+    get '/' => 'admin#index'
+  end
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resource :imageboard, only: [:edit, :update, :show] do
+    get 'about'
+    get 'news'
+    get 'faq'
+    get 'rules'
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    resources :sections
+  end
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  resources :sections do
+    resources :boards, except: :index
+  end
 
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
+  resources :boards, except: :index
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  scope "/:shortcut" do
+    resources :branches
+    resources :replies
+  end
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  get '/:shortcut/:number' => 'replies#index', as: 'thread'
+  get '/:shortcut' => 'branches#index', as: 'shortcut'
 
-  # See how all your routes lay out with "rake routes"
+  root to: 'imageboards#show'
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end

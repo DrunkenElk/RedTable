@@ -1,0 +1,6 @@
+= render partial: 'shared/board_header', locals: { board: @board } 
+= render partial: 'replies/form', locals: { caption: t('reply.show.new') } 
+
+= render template: 'branches/show', locals: { branch: @branch }
+- @replies.each do |reply|
+  = render template: 'replies/show', locals: { reply: reply }

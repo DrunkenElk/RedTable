@@ -1,0 +1,27 @@
+h3 = t('user.index.caption')
+
+table.table.table-striped.well
+  tr
+    th = User.human_attribute_name(:role)
+    th = User.human_attribute_name(:email)
+    th = User.human_attribute_name(:name)
+    th = User.human_attribute_name(:color)
+    th = User.human_attribute_name(:sign)
+    th
+    th
+    th
+
+  - @users.each do |user|
+    tr
+      td = user.role
+      td = user.email
+      td = user.name
+      td style="background-color: #{user.color};"
+      td = t(user.sign.to_s)
+      td = link_to tag('icon', class: 'icon-file'),  user
+      td = link_to tag('icon', class: 'icon-pencil'), edit_user_path(user)
+      td = link_to tag('icon', class: 'icon-remove'), user, :confirm => t('index.confirm'), :method => :delete
+
+br
+
+= link_to t('user.index.new'), new_user_path

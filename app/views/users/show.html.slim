@@ -1,0 +1,23 @@
+h2= User.model_name.human
+
+.well
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :email}:"
+    .offset2 = @user.email
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :role}:"
+    .offset2 = @user.role
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :name}:"
+    .offset2 = @user.name
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :color}:"
+    .offset2 
+      .span1 style="background-color: #{@user.color};"
+  .row-fluid
+    b.span1 = "#{User.human_attribute_name :sign}:"
+    .offset2 = t(@user.sign.to_s)
+
+= link_to t('form.edit'), edit_user_path(@user)
+'|
+= link_to t('form.back'), users_path

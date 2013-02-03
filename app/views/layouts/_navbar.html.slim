@@ -1,0 +1,20 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
+      a.brand.imageboard-name href="#{root_path}"
+        = imageboard.name
+      .container.nav-collapse
+        ul.nav
+          - SectionDecorator.all.each_with_index do |section, i|
+            li.dropdown
+              a.dropdown-board-caption{ id="section_#{i}" class="dropdown-toggle"
+                                        data-toggle="dropdown" role="button" href="#" }
+                = section.name
+                b.caret
+              ul class="dropdown-menu" aria-labelledby="section_#{i}" role="menu"
+                - section.visible_boards.each do |board|
+                  li.dropdown-board
+                    a href=shortcut_path(board.shortcut)
+                      span.full_shortcut_width = board.full_shortcut
+                      span = board.caption
+        = render partial: 'layouts/entrance'

@@ -1,0 +1,19 @@
+p
+  button.btn.btn-primary.accordion-root type="button"
+    = t 'imageboard.show.accordion-root' 
+
+.accordion#sections
+  - SectionDecorator.all.each_with_index do |section, index|
+    - key_collapse = "collapse_#{index}"
+    .accordion-group
+      .accordion-heading
+        a.accordion-toggle data-toggle="collapse" href="##{key_collapse}" data-parent="#sections"
+          strong = section.name
+      .accordion-body.collapse id=key_collapse
+        .accordion-inner
+          table.table.table-condensed
+            - section.visible_boards.each_slice(4) do |row|
+              tr
+                - row.each do |board|
+                  td.board
+                    = link_to board.name, shortcut_path(board.shortcut)

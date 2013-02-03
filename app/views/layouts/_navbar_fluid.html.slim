@@ -1,0 +1,12 @@
+.navbar.navbar-fluid-top
+  .navbar-inner
+    .container-fluid
+      a.brand.imageboard-name href="#{root_path}"
+        = imageboard.name
+      .container-fluid.nav-collapse
+        ul.nav
+          li= link_to t('application.about'), about_imageboard_path
+          li= link_to t('application.news'), news_imageboard_path
+          li= link_to t('application.faq'), faq_imageboard_path
+          li= link_to t('application.rules'), rules_imageboard_path
+        = render partial: 'layouts/entrance'

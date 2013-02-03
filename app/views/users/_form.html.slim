@@ -1,0 +1,21 @@
+= simple_form_for(@user, html: { class: 'form-horizontal well' }) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :email
+    = f.input :name
+
+    .control-group
+      = label_tag :color, User.human_attribute_name(:color), :class => 'control-label'
+      #user-color-picker.span1.controls.input-append.color data-color=@user.color data-color-format="hex"
+        = text_field :user, :color, :readonly => true
+        span.add-on
+          i style="background-color: #{@user.color}"
+
+    = f.input :sign, as: :boolean
+    = f.input :password, as: :password
+    = f.input :password_confirmation, as: :password
+    = f.input :role, collection: User::ROLES
+
+  .form-actions
+    = f.button :submit, t('form.submit')
