@@ -27,5 +27,10 @@
                 - if role?(:admin)
                   = f.input :attached, as: :boolean
 
+                .control-group.file.optional
+                  = label_tag :captcha, t('simple_captcha.form_label'), class: 'control-label file optional'
+                  .controls.input-mini
+                    = show_simple_captcha
+
               .form-actions
                 = f.button :submit, t('form.submit')

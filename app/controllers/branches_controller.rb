@@ -18,9 +18,11 @@ class BranchesController < ApplicationController
   end
 
   def create
-    @branch = @board.branches.build(params[:branch])
-    set_hidden_fields
-    @branch.save
+    if simple_captcha_valid?
+      @branch = @board.branches.build(params[:branch])
+      set_hidden_fields
+      @branch.save
+    end
     redirect_to shortcut_path(@board.shortcut)
   end
 

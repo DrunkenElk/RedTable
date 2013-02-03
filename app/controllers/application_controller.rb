@@ -2,6 +2,7 @@
 require "application_responder"
 
 class ApplicationController < ActionController::Base
+  include SimpleCaptcha::ControllerHelpers
   self.responder = ApplicationResponder
 
   before_filter :check_format, :load_imageboard

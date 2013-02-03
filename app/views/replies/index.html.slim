@@ -2,6 +2,5 @@
 = render partial: 'replies/form', locals: { caption: t('reply.show.new') } 
 
 = render template: 'branches/show', locals: { branch: @branch }
-= paginate @replies, params: { controller: 'replies', :action => 'index' }
 - @replies.each do |reply|
   = render template: 'replies/show', locals: { reply: reply }

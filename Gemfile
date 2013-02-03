@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 
 # database
-gem 'mongoid', '~> 3.0.16'
+gem 'mongoid', '3.0.16'
 gem 'bson_ext', '~> 1.8.1'
 
 # authentication & authorization
@@ -27,6 +27,7 @@ gem 'twitter-bootstrap-rails', '2.1.6'
 gem 'bootstrap-colorpicker-rails'
 gem 'less-rails', '2.2.3'
 gem 'kaminari'
+gem 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
 
 group :development do
   gem 'pry', '0.9.10'

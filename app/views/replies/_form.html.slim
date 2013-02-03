@@ -22,6 +22,11 @@
 
                 = f.input :password
 
+                .control-group.file.optional
+                  = label_tag :captcha, t('simple_captcha.form_label'), class: 'control-label file optional'
+                  .controls.input-mini
+                    = show_simple_captcha
+
                 = hidden_field_tag "number", @branch.number
 
               .form-actions

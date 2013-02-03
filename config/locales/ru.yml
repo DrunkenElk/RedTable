@@ -90,6 +90,14 @@ ru:
       caption: "Вход"
       submit: "Войти"
 
+  simple_captcha:
+    form_label: "Капча"
+    label: "Введите символы"
+    placeholder: "Введите символы"
+    message:
+      default: "Секретный код не совпадает с изображением"
+      user: "Секретный код не совпадает с изображением"
+
   unauthorized:
     manage:
       all: "У вас нет доступа к данной странице!"

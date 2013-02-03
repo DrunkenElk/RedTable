@@ -3,8 +3,8 @@ class RepliesController < ApplicationController
   layout 'board'
 
   def index
-    @replies = ::ReplyDecorator.decorate(@branch.replies.page(params[:page]))
-    @reply = ::ReplyDecorator.new(@branch.replies.build)
+    @replies = ::ReplyDecorator.decorate(@branch.replies.to_a)
+    @reply = ::ReplyDecorator.decorate(@branch.replies.build)
     respond_with(@replies)
   end
 
@@ -18,9 +18,11 @@ class RepliesController < ApplicationController
   end
 
   def create
-    @reply = @branch.replies.build(params[:reply])
-    set_hidden_fields
-    @reply.save
+    if simple_captcha_valid?
+      @reply = @branch.replies.build(params[:reply])
+      set_hidden_fields
+      @reply.save
+    end
     redirect_to thread_path(shortcut: @board.shortcut, number: @branch.number)
   end
 

@@ -2,8 +2,6 @@ class Reply
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  paginates_per 5
-
   belongs_to :branch
 
   field :email, type: String

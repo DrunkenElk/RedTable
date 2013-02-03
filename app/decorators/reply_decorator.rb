@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class ReplyDecorator < Draper::Base
-  decorates :branch
+  decorates :reply
 
   def full_number
     "№ #{number}"
